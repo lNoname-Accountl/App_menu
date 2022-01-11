@@ -2,15 +2,18 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, AppRegistry } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native'
-import Routes from './src/Routes'
+import { createStackContainer } from '@react-navigation/native-stack'
+import Login from './src/component/Login'
+import Menu from './src/component/Menu'
 
-class manuApp extends Component {
-    render() {
-        return (
-            <Routes/>
-        )
-    }
+export default function App() {
+    const Stack = createStackNavigator()
+    return (
+        <NavigationContainer>
+            <Stack.Navigator initialRouteName="Login">
+                <Stack.Screen name="Login" component={Login}/>
+                <Stack.Screen name="Menu" component={Menu}/>
+            </Stack.Navigator>
+        </NavigationContainer>    
+    )
 }
-
-export default manuApp
-AppRegistry.registerComponent('manuApp', () => manuApp)

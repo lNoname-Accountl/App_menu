@@ -3,10 +3,10 @@ import React from 'react'
 import {StyleSheet, View, Text} from 'react-native'
 
 export default function Menu() {
-    return {
+    return (
         <View style={styles.container}>
             <Text> Menu Appication </Text>
-            <StatusBar style="auto">
+            <StatusBar style="auto"/>
         </View>
-    }
+    )
 }
